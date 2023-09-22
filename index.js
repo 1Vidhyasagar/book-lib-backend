@@ -10,14 +10,14 @@ const app = express();
 app.use(express.json());
 
 // Middleware for cors policy
-const corsOptions = {
-  origin: "https://booklib-vidhyasagar.netlify.app",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true,
-};
+// const corsOptions = {
+//   origin: "https://booklib-vidhyasagar.netlify.app",
+//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   credentials: true,
+// };
 
-app.use(cors(corsOptions));
-// app.use(cors());
+// app.use(cors(corsOptions));
+app.use(cors());
 
 
 app.get("/", (request, response) => {
