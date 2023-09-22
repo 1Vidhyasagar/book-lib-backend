@@ -9,16 +9,14 @@ const app = express();
 
 app.use(express.json());
 
-//Middleware for cors policy---option 1
-app.use(cors()); 
-//--------option2
-// app.use(
-//    cors({
-//     origin: 'https://localhost:3000',
-//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//     allowedHeaders:['Content-Type'],
-//    })
-// );
+//Middleware for cors policy
+const corsOptions = {
+  origin: "https://booklib-vidhyasagar.netlify.app", 
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, 
+};
+
+app.use(cors(corsOptions));
 
 
 app.get("/", (request, response) => {
